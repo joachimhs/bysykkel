@@ -1,4 +1,8 @@
-# bysykkel
+# Demo
+
+En fungerende demonstrasjon av løsningen finnes her: [http://bysykkel.skeiene.no](http://bysykkel.skeiene.no). 
+
+# Bysykkel
 
 Denne webapplikasjonen er en enkel applikasjon som gjør det mulig å se alle bysykkel stasjonene med antall ledige sykler og parkeringsplasser/låser. Brukeren har mulighet til å søke (filtrere) ved å skrive inn navnet på en stasjon i søke-feltet på toppen av siden. Søket tar ikke hensyn til store og små bokstaver, og søkesetningen søker i hele ordet (ikke kun fra begynnelsen).
 
