@@ -1,0 +1,38 @@
+<div class="header">
+  <img src="/bike-large.png" />
+</div>
+
+<div class="filter-stations">
+  <Input @value={{filterString}} @key-down={{updateFilter}} class="fill-width" placeholder="Søk etter bysykkel stasjon!"></Input>
+</div>
+
+<div class="bysykkel-stations">
+{{#each remainingStations as |station| }}
+  <div class="bysykkel-station">
+    <h1>{{station.name}}</h1>
+    <h3>{{station.address}}</h3>
+
+    <div class="bysykkel-info">
+      <img src="/bike_icon.png" /> {{station.numBikesAvailable}} ledige sykler
+      <img src="/parking_icon.png" /> {{station.numDocksAvailable}} ledige plasser
+    </div>
+
+    {{#if station.showMap}}
+      <button {{action "hideMap" station}} class="btn">Skjul kart &#x2C4;</button>
+      <a href="{{station.streetMapLinkUrl}}" target="_blank" class="btn btn-link pull-right text-right">Vis stort kart &rarr;</a>
+      <iframe width="100%"
+              height="400"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+              src="{{station.streetMapUrl}}"
+              style="border: 1px solid black">
+      </iframe>
+    {{else}}
+      <button {{action "viewMap" station}} class="btn">Vis i kart &#709;</button>
+    {{/if}}
+
+  </div>
+{{/each}}
+</div>
